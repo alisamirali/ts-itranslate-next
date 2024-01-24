@@ -1,7 +1,5 @@
-"use client";
-
 import { useParams } from "next/navigation";
-import I18n from "../lib";
+import I18n from "../../lib";
 
 const translations = {
   en: {
@@ -14,10 +12,10 @@ const translations = {
 
 const Home = () => {
   const params = useParams();
-  const lang = params.lang;
+  const locale = params.locale;
 
-  // Fallback to "en" if lang is not present or not supported
-  const urlLanguage = lang === "ar" || lang === "en" ? lang : "en";
+  // Fallback to "en" if locale is not present or not supported
+  const urlLanguage = locale === "ar" || locale === "en" ? locale : "en";
 
   // Create an instance of I18n with the detected language
   const i18n = new I18n(urlLanguage, translations);
