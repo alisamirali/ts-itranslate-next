@@ -3,7 +3,13 @@
 import { useParams } from "next/navigation";
 import I18n from "../../lib";
 
-const translations = {
+interface Translations {
+  [language: string]: {
+    greeting: string;
+  };
+}
+
+const translations: Translations = {
   en: {
     greeting: "Hello!",
   },
@@ -13,14 +19,13 @@ const translations = {
 };
 
 const Home = () => {
-  const params = useParams();
-  const locale = params.locale || "en";
+  const { locale: requestedLocale } = useParams();
 
-  // Fallback to "en" if locale is not present or not supported
-  const urlLanguage = locale === "ar" || locale === "en" ? locale : "en";
+  // Treat "en" as the default language if no locale is specified
+  const locale: string = requestedLocale || "en";
 
   // Create an instance of I18n with the detected language
-  const i18n = new I18n(urlLanguage, translations);
+  const i18n = new I18n(locale, translations);
 
   const greeting = i18n.translate("greeting");
 
