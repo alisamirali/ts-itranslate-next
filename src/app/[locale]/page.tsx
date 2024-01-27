@@ -22,7 +22,7 @@ const Home = () => {
   const { locale: requestedLocale } = useParams();
 
   // Treat "en" as the default language if no locale is specified
-  const locale: string = requestedLocale || "en";
+  const locale = (requestedLocale as string) || "en";
 
   // Create an instance of I18n with the detected language
   const i18n = new I18n(locale, translations);
