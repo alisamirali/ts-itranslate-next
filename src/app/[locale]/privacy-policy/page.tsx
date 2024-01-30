@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
 
-import I18n from "../../[locale]/privacy-policy";
+import { useParams } from "next/navigation";
+import I18n from "../../../lib";
 
 interface Translations {
   [language: string]: {
@@ -8,8 +9,34 @@ interface Translations {
   };
 }
 
-// const translations: Translations =
+const translations: Translations = {
+  en: {
+    greeting: "Privacy Policy",
+  },
+  ar: {
+    greeting: "سياسة الخصوصية",
+  },
+};
 
-export default function PrivacyPolicy() {
-  return <h1>Privacy Policy</h1>;
-}
+const PrivacyPolicy = () => {
+  const { locale: requestedLocale } = useParams();
+
+  // Treat "en" as the default language if no locale is specified
+  const locale = (requestedLocale as string) || "en";
+
+  // Create an instance of I18n with the detected language
+  const i18n = new I18n(locale, translations);
+
+  const greeting = i18n.translate("greeting");
+
+  return (
+    <div
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      className="w-full h-screen bg-teal-600 flex items-center justify-center"
+    >
+      <h1 className="text-6xl">{greeting}</h1>
+    </div>
+  );
+};
+
+export default PrivacyPolicy;
