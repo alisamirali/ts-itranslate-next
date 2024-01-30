@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <div
       dir={locale === "ar" ? "rtl" : "ltr"}
-      className="w-full h-screen bg-teal-600 flex items-center justify-center"
+      className="w-full h-screen bg-black flex items-center justify-center"
     >
       <h1 className="text-6xl">{greeting}</h1>
     </div>
