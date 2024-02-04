@@ -18,7 +18,8 @@ class I18n {
     private currentLanguage: string,
     private translations: { [lang: string]: TranslationMap }
   ) {
-    //
+    // this.currentLanguage = currentLanguage;
+    // this.translations = translations || {};
   }
 
   /**

@@ -33,10 +33,11 @@ export const useI18n = () => {
   /*
    ** -----------------------
    */
-  console.log("-----------------------");
-  console.log("Locale:", locale);
-  console.log("Translations:", translations);
-  console.log("-----------------------");
+  // console.log("-----------------------");
+  // console.log("Locale:", locale);
+  // console.log("-----------------------");
+  // console.log("Translations:", translations);
+  // console.log("-----------------------");
   /*
    ** -----------------------
    */
@@ -46,6 +47,6 @@ export const useI18n = () => {
 
   // Use the translation function and return it for use in components
   return {
-    t: i18n.translate,
+    t: (key: string) => i18n.translate(key),
   };
 };
