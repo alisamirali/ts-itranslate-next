@@ -30,6 +30,17 @@ export const useI18n = () => {
   // Get translations directly from the imported JSON file
   const translations: TranslationMap = translationFiles[locale] || {};
 
+  /*
+   ** -----------------------
+   */
+  console.log("-----------------------");
+  console.log("Locale:", locale);
+  console.log("Translations:", translations);
+  console.log("-----------------------");
+  /*
+   ** -----------------------
+   */
+
   // Create an instance of I18n with the detected language and translations
   const i18n = new I18n(locale, { [locale]: translations });
 
