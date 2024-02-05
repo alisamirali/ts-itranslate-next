@@ -26,7 +26,7 @@ class I18n {
    * Sets the current language for translations.
    * @param language - The language code to set as the current language.
    */
-  private setLanguage(language: string) {
+  setLanguage(language: string) {
     this.currentLanguage = language;
   }
 

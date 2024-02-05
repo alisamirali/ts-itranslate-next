@@ -45,8 +45,11 @@ export const useI18n = () => {
   // Create an instance of I18n with the detected language and translations
   const i18n = new I18n(locale, { [locale]: translations });
 
-  // Use the translation function and return it for use in components
+  // Set the default language
+  // i18n.setLanguage(locale);
+
   return {
     t: (key: string) => i18n.translate(key),
+    setLanguage: (language: string) => i18n.setLanguage(language),
   };
 };
