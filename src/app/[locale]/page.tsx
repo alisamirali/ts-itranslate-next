@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { useI18n } from "@/utils/translate";
 import Link from "next/link";
@@ -15,7 +15,12 @@ const Home = () => {
 
   const handleLanguageChange = () => {
     setLanguage(locale === "en" ? "ar" : "en");
+    console.log("Language changed to:", locale === "en" ? "ar" : "en");
   };
+
+  useEffect(() => {
+    //
+  }, [locale]);
 
   return (
     <div
