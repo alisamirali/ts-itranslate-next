@@ -14,7 +14,7 @@ const Home = () => {
   const { locale } = useParams();
 
   const handleLanguageChange = () => {
-    setLanguage("ar");
+    setLanguage(locale === "en" ? "ar" : "en");
   };
 
   return (
