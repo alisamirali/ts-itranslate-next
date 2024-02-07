@@ -4,10 +4,6 @@ import { useParams } from "next/navigation";
 import { useI18n } from "@/utils/translate";
 import Link from "next/link";
 
-interface Translations {
-  [language: string]: {};
-}
-
 const About = () => {
   // Use the useI18n hook to get the translation function
   const { t } = useI18n();

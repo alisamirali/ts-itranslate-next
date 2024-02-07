@@ -4,10 +4,6 @@ import { useParams } from "next/navigation";
 import { useI18n } from "@/utils/translate";
 import Link from "next/link";
 
-interface Translations {
-  [language: string]: {};
-}
-
 const PrivacyPolicy = () => {
   const { t } = useI18n();
   const { locale } = useParams();
